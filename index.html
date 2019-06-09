@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>TaskAdmin</title>
+</head>
+<body>
+    <nav class="navbar navar-inverse fixed-top bg-dark">
+        <a class="navbar-brand" href="#">
+            <i class="fas fa-tasks" style="padding-right: 10px;"></i><span class="bold">task</span>Admin
+        </a>
+    </nav>
+    
+    <div class="container-fluid">
+        <div class="row">
+          <nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
+            <form class="text-center my-4 addProject">
+              <input class="form-control m-auto" type="text" name="addProject" placeholder="Add new project"/>
+            </form>
+            <ul class="nav nav-pills flex-column projectList">
+              <!-- add project li within projectList dynamically -->
+            </ul> 
+          </nav>
+          
+          <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
+              <h1 class="projectName">Project Name</h1>
+              <button type="button" class="btn btn-primary add-task-btn">Add new task</button>
+              <!-- add task to active project dynamically -->
+              <div class="taskList"></div>
+
+              <!-- Add new task form -->
+              <div class="col-12 task-form">
+                <div class="card">
+                  <div class="card-body form-card-body">
+                    <!-- add div dynamically to show alert message -->
+                    <h4 class="card-title task-form-title">New Task Form</h4>
+                    <form class="forms-sample">
+                        <div class="form-group">
+                          <label for="task-name">Task Name</label>
+                          <input type="text" class="form-control" id="task-name" placeholder="Enter task name">
+                        </div>
+                        <div class="form-group">
+                          <label for="description">Task Description</label>
+                          <textarea class="form-control" id="description" placeholder="Enter task description" rows="2"></textarea>
+                        </div>
+                        <div class="form-group">
+                          <label for="due-date">Due Date</label>
+                          <input class="form-control" id="due-date" placeholder="dd/mm/yyyy" />
+                        </div>
+                        <div class="form-group">
+                          <label for="priority">Priority</label>
+                          <select class="form-control" id="priority">
+                              <option>choose priority</option>
+                              <option>Low</option>
+                              <option>Normal</option>
+                              <option>High</option>
+                          </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary mr-2 submit-btn">Submit</button>
+                        <button class="btn btn-light cancel-btn">Cancel</button>
+                    </form>
+                  </div> <!-- end card -->
+                </div> <!-- end card-body -->
+              </div> <!-- end task-form -->
+
+              <!-- Edit task form -->
+              <div class="col-12 edit-task-form">
+                  <div class="card">
+                    <div class="card-body form-card-body">
+                      <!-- add div dynamically to show alert message -->
+                      <h4 class="card-title task-form-title">Edit Task Form</h4>
+                      <form class="forms-sample">
+                          <div class="form-group">
+                            <label for="edit-task-name">Task Name</label>
+                            <input type="text" class="form-control" id="edit-task-name" placeholder="Enter task name">
+                          </div>
+                          <div class="form-group">
+                            <label for="edit-description">Task Description</label>
+                            <textarea class="form-control" id="edit-description" placeholder="Enter task description" rows="2"></textarea>
+                          </div>
+                          <div class="form-group">
+                            <label for="edit-due-date">Due Date</label>
+                            <input class="form-control" id="edit-due-date" placeholder="dd/mm/yyyy" />
+                          </div>
+                          <div class="form-group">
+                            <label for="edit-priority">Priority</label>
+                            <select class="form-control" id="edit-priority">
+                                <option>choose priority</option>
+                                <option>Low</option>
+                                <option>Normal</option>
+                                <option>High</option>
+                            </select>
+                          </div>
+                          <button type="submit" class="btn btn-primary mr-2 edit-submit-btn">Submit</button>
+                          <button class="btn btn-light edit-cancel-btn">Cancel</button>
+                      </form>
+                    </div> <!-- end card -->
+                  </div> <!-- end card-body -->
+                </div> <!-- end edit-task-form -->
+          </main>
+        </div>
+    </div>
+
+    <script src="todo.js"></script>
+</body>
+</html>
